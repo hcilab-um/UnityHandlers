@@ -1,0 +1,13 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\unity_epson-200\Assets\Mxr_Unity_Package\Scripts\s3dGyroCamSBS.js">
+    <Files>
+      <File FileName="..\unity_epson-200\Assets\Mxr_Unity_Package\Scripts\s3dCameraSBS.js" Line="223" Column="33" />
+      <File FileName="..\unity_epson-200\Assets\Mxr_Unity_Package\Scripts\s3dGyroCamSBS.js" Line="97" Column="8" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

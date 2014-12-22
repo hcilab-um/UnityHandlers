@@ -1,0 +1,20 @@
+Initialize engine version: 4.5.4f1 (e036f44c54c9)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA Quadro 600 (ID=0xdf8)
+    Vendor:   NVIDIA
+    VRAM:     977 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Jango\Documents\UnityMultiplatform\unity_epson-100\Builds\unity_epson-100_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Jango\Documents\UnityMultiplatform\unity_epson-100\Builds\unity_epson-100_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Jango\Documents\UnityMultiplatform\unity_epson-100\Builds\unity_epson-100_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Jango\Documents\UnityMultiplatform\unity_epson-100\Builds\unity_epson-100_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Jango\Documents\UnityMultiplatform\unity_epson-100\Builds\unity_epson-100_Data\Managed\MiddleVR_dotNet.dll (this message is harmless)
+Loading C:\Users\Jango\Documents\UnityMultiplatform\unity_epson-100\Builds\unity_epson-100_Data\Managed\MiddleVR_dotNet.dll into Unity Child Domain
+Platform assembly: C:\Users\Jango\Documents\UnityMultiplatform\unity_epson-100\Builds\unity_epson-100_Data\Managed\MiddleVR_Unity3D.dll (this message is harmless)
+Loading C:\Users\Jango\Documents\UnityMultiplatform\unity_epson-100\Builds\unity_epson-100_Data\Managed\MiddleVR_Unity3D.dll into Unity Child Domain
+- Completed reload, in  0.043 seconds
+<RI> Initializing input.
+<RI> Input initialized.
+desktop: 1680x1050 59Hz; virtual: 1680x1050 at 0,0

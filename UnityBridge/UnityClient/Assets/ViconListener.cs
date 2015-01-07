@@ -4,6 +4,7 @@ using Ubicomp.Utils.NET.MulticastTransportFramework;
 using System.Net;
 using Vicon2Unity;
 using System;
+using UnityEngine.UI;
 
 public class ViconListener : MonoBehaviour, ITransportListener 
 {
@@ -14,6 +15,7 @@ public class ViconListener : MonoBehaviour, ITransportListener
 
 	public string name = "";
 	public Vector3 position = new Vector3();
+	private Text posInfo;
 	// Use this for initialization
 	void Start () 
 	{
@@ -40,6 +42,7 @@ public class ViconListener : MonoBehaviour, ITransportListener
 	// Update is called once per frame
 	void Update () 
 	{
-	
+		posInfo = GetComponent<Text>();
+		posInfo.text = position.x + ", " + position.y + ", " + position.z;
 	}
 }

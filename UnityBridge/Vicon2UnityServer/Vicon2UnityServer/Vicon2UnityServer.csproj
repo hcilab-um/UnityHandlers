@@ -88,8 +88,7 @@
     <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Jayrock.Json, Version=0.9.11012.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Jayrock.Json">
       <HintPath>..\Libs\Jayrock.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />

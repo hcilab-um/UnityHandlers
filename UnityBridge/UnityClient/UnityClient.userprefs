@@ -1,0 +1,15 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ViconListener.cs">
+    <Files>
+      <File FileName="Assets\ViconListener.cs" Line="33" Column="52" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="Assets\ViconListener.cs" line="29" offsetX="572" offsetY="328" expression="message.MessageData.OrientationQuat" liveUpdate="False" />
+    <Watch file="Assets\ViconListener.cs" line="29" offsetX="589" offsetY="279" expression="message.MessageData.SubjectName" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+</Properties>

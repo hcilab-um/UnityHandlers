@@ -10,8 +10,6 @@ namespace Ubicomp.Utils.NET.MulticastTransportFramework
   public class TransportMessageImporter : Jayrock.Json.Conversion.IImporter
   {
 
-    private static log4net.ILog logger = log4net.LogManager.GetLogger(typeof(TransportMessageImporter));
-
     public static Dictionary<Int32, IImporter> Importers = new Dictionary<int, IImporter>();
 
     public object Import(Jayrock.Json.Conversion.ImportContext context, Jayrock.Json.JsonReader reader)
@@ -53,7 +51,7 @@ namespace Ubicomp.Utils.NET.MulticastTransportFramework
       }
       catch (Exception e) 
       {
-        logger.Error("The application could not import the message as a valid TransportMessage.", e);
+        Console.WriteLine("The application could not import the message as a valid TransportMessage.", e);
       }
 
       return tMessage;

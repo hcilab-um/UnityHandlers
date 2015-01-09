@@ -40,9 +40,6 @@
     <Reference Include="Jayrock.Json">
       <HintPath>..\Libs\Jayrock.Json.dll</HintPath>
     </Reference>
-    <Reference Include="log4net">
-      <HintPath>..\Libs\log4net.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -57,6 +54,10 @@
     <Compile Include="ViconMessage.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\log4net\src\log4net\log4net.vs2010.csproj">
+      <Project>{181FE707-E161-4722-9F38-6AAAB6FAA106}</Project>
+      <Name>log4net.vs2010</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MulticastTransportFramework\MulticastTransportFramework.csproj">
       <Project>{4AF95A28-12C7-4D59-8F84-17EF1A60C9A6}</Project>
       <Name>MulticastTransportFramework</Name>

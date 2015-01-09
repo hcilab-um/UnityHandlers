@@ -15,8 +15,6 @@ namespace Ubicomp.Utils.NET.MulticastTransportFramework
   public class TransportComponent : ITransportListener
   {
 
-    log4net.ILog logger = log4net.LogManager.GetLogger(typeof(TransportComponent));
-
     public const int TransportComponentID = 0;
     public static TransportComponent Instance = new TransportComponent();
 
@@ -77,8 +75,8 @@ namespace Ubicomp.Utils.NET.MulticastTransportFramework
       currentMessageCons = 1;
       socket.StartReceiving();
 
-      logger.Info("Multicast Sockect Started to Listen for Traffic.");
-      logger.Info("TransportComponent Initialized.");
+      Console.WriteLine("Multicast Sockect Started to Listen for Traffic.");
+      Console.WriteLine("TransportComponent Initialized.");
     }
 
     public String Send(TransportMessage message)
@@ -101,11 +99,11 @@ namespace Ubicomp.Utils.NET.MulticastTransportFramework
       {
         if (e.Type == MulticastSocketMessageType.SendException)
         {
-          logger.Error(String.Format("Error Sending Message: {0}", e.NewObject));
+          Console.WriteLine(String.Format("Error Sending Message: {0}", e.NewObject));
         }
         else if (e.Type == MulticastSocketMessageType.ReceiveException)
         {
-          logger.Error(String.Format("Error Receiving Message: {0}", e.NewObject));
+          Console.WriteLine(String.Format("Error Receiving Message: {0}", e.NewObject));
         }
         return;
       }
@@ -135,13 +133,13 @@ namespace Ubicomp.Utils.NET.MulticastTransportFramework
         }
         catch (Exception ex)
         {
-          logger.Error(String.Format("Error Processing Received Message: {0}", ex.Message));
+          Console.WriteLine(String.Format("Error Processing Received Message: {0}", ex.Message));
         }
 
       }
       catch (Exception ex)
       {
-        logger.Error(String.Format("Error Processing Received Message: {0}", ex.Message));
+        Console.WriteLine(String.Format("Error Processing Received Message: {0}", ex.Message));
       }
 
       //It's only called if the thread actually entered the gate. If it didn't, it would wake up another thread that should
@@ -185,7 +183,7 @@ namespace Ubicomp.Utils.NET.MulticastTransportFramework
 
     public void MessageReceived(TransportMessage message, String rawMessage)
     {
-      logger.Info("Received Message for Transport Component - Not Implemented Feature.");
+      Console.WriteLine("Received Message for Transport Component - Not Implemented Feature.");
     }
 
     #endregion

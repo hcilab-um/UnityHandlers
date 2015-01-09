@@ -13,7 +13,7 @@ public class ViconListener : MonoBehaviour, ITransportListener
 	public int TTL = 10;
 	public string groupIP = "225.4.5.6";
 
-	public string name = "";
+	public string subjectName;
 	public Vector3 position = new Vector3();
 	private Text posInfo;
 	// Use this for initialization
@@ -33,7 +33,7 @@ public class ViconListener : MonoBehaviour, ITransportListener
 	{
 		ViconMessage msg = (message.MessageData as ViconMessage);
 		Console.WriteLine("MessageReceived: {0}", (message.MessageData as ViconMessage));
-		name = msg.SubjectName;
+		subjectName = msg.SubjectName;
 		position.x = (float)msg.Position [0];
 		position.y = (float)msg.Position [1];
 		position.z = (float)msg.Position [2];

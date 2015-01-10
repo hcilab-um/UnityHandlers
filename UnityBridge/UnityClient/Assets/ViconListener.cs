@@ -15,7 +15,7 @@ public class ViconListener : MonoBehaviour, ITransportListener
 
   public string subjectName;
   public Vector3 position = new Vector3();
-  private Text posInfo;
+  public Quaternion quat = new Quaternion();
   // Use this for initialization
   void Start()
   {
@@ -34,15 +34,20 @@ public class ViconListener : MonoBehaviour, ITransportListener
     ViconMessage msg = (message.MessageData as ViconMessage);
     Console.WriteLine("MessageReceived: {0}", (message.MessageData as ViconMessage));
     subjectName = msg.SubjectName;
-    position.x = (float)msg.Position[0];
-    position.y = (float)msg.Position[1];
-    position.z = (float)msg.Position[2];
+    position.x = (float)msg.Position[0] / 1000.0f;
+    position.y = (float)msg.Position[1] / 1000.0f;
+    position.z = -(float)msg.Position[2] / 1000.0f;
+
+    quat.x = -(float)msg.OrientationQuat[0];
+    quat.y = -(float)msg.OrientationQuat[1]; 
+    quat.z = (float)msg.OrientationQuat[2];
+    quat.w = (float)msg.OrientationQuat[3];
   }
 
   // Update is called once per frame
   void Update()
   {
-    posInfo = GetComponent<Text>();
-    posInfo.text = position.x + ", " + position.y + ", " + position.z;
+    transform.position = position;
+    transform.rotation = quat;
   }
 }

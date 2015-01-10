@@ -55,6 +55,9 @@
     <Reference Include="Jayrock.Json">
       <HintPath>Assets\Plugins\Jayrock.Json.dll</HintPath>
     </Reference>
+    <Reference Include="log4net">
+      <HintPath>Assets\Plugins\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Ubicomp.Utils.NET.MulticastSocket">
       <HintPath>Assets\Plugins\Ubicomp.Utils.NET.MulticastSocket.dll</HintPath>
     </Reference>

@@ -7,6 +7,7 @@ using Ubicomp.Utils.NET.MulticastTransportFramework;
 using Vicon2Unity;
 using System.Net.Sockets;
 using ViconDataStreamSDK.DotNET;
+using Vicon2UnityServer.Properties;
 
 namespace Vicon2UnityServer
 {
@@ -57,7 +58,7 @@ namespace Vicon2UnityServer
       Console.WriteLine();
       while (!Console.KeyAvailable)
       {
-        ViconMessage message = LoadViconMessage("bt100");
+        ViconMessage message = LoadViconMessage(Settings.Default.TrackingObjectName, Settings.Default.TrackingSegmentName);
         if (message != null)
         {
           testObj.SendMessages(message);
@@ -85,13 +86,21 @@ namespace Vicon2UnityServer
       MyClient.EnableSegmentData();
       //ServerPush have no latency
       MyClient.SetStreamMode(ViconDataStreamSDK.DotNET.StreamMode.ServerPush);
+
+
+      // Set the global up axis
+      //MyClient.SetAxisMapping(ViconDataStreamSDK.DotNET.Direction.Forward,
+      //                         ViconDataStreamSDK.DotNET.Direction.Left,
+      //                         ViconDataStreamSDK.DotNET.Direction.Up); // Z-up
+
       MyClient.SetAxisMapping(ViconDataStreamSDK.DotNET.Direction.Forward,
-                         ViconDataStreamSDK.DotNET.Direction.Left,
-                         ViconDataStreamSDK.DotNET.Direction.Up); // Z-up
+                               ViconDataStreamSDK.DotNET.Direction.Up,
+                               ViconDataStreamSDK.DotNET.Direction.Right); // Y-up
+
       //MyClient.StartTransmittingMulticast("localhost", "224.0.0.0");
     }
 
-    private static ViconMessage LoadViconMessage(string subjectName)
+    private static ViconMessage LoadViconMessage(string subjectName, string segmentName)
     {
       // Get a frame
       Console.Write("Waiting for new frame...");
@@ -105,14 +114,15 @@ namespace Vicon2UnityServer
 
       // Get the global segment translation
       Output_GetSegmentGlobalTranslation _Output_GetSegmentGlobalTranslation =
-        MyClient.GetSegmentGlobalTranslation(subjectName, subjectName);
+        MyClient.GetSegmentGlobalTranslation(subjectName, segmentName);
       // Get the global segment rotation in quaternion co-ordinates
       Output_GetSegmentGlobalRotationQuaternion _Output_GetSegmentGlobalRotationQuaternion =
-        MyClient.GetSegmentGlobalRotationQuaternion(subjectName, subjectName);
+        MyClient.GetSegmentGlobalRotationQuaternion(subjectName, segmentName);
 
       if (Result.Success ==_Output_GetSegmentGlobalTranslation.Result
           && Result.Success == _Output_GetSegmentGlobalRotationQuaternion.Result)
       {
+        Console.WriteLine("{0},{1},{2}", _Output_GetSegmentGlobalTranslation.Translation[0] / 1000, _Output_GetSegmentGlobalTranslation.Translation[1] / 1000, _Output_GetSegmentGlobalTranslation.Translation[2] / 1000);
         return new ViconMessage() 
         { 
           SubjectName = subjectName,

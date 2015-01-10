@@ -62,6 +62,9 @@
  <Reference Include="Vicon2Unity">
  <HintPath>C:/Users/bens/Desktop/UnityHandlers/UnityBridge/UnityClient/Assets/Plugins/Vicon2Unity.dll</HintPath>
  </Reference>
+ <Reference Include="log4net">
+ <HintPath>C:/Users/bens/Desktop/UnityHandlers/UnityBridge/UnityClient/Assets/Plugins/log4net.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

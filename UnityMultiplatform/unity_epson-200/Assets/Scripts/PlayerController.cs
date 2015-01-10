@@ -4,8 +4,6 @@ using System.Collections;
 public class PlayerController : MonoBehaviour 
 {
 	public float playerSpeed = 0.0f;
-	public GUIText countText;
-	public GUIText winText;
 
 	private int count = 0;
 
@@ -14,7 +12,6 @@ public class PlayerController : MonoBehaviour
 		Screen.orientation = ScreenOrientation.LandscapeLeft;
 		count = 0;
 		SetCountText ();
-		winText.text = "";
 	}
 
 	void FixedUpdate ()
@@ -37,16 +34,10 @@ public class PlayerController : MonoBehaviour
 		{
 			other.gameObject.SetActive (false);
 			count++;
-			SetCountText ();
 		}
 	}
 
 	void SetCountText ()
 	{
-		countText.text = "Count: " + count.ToString ();
-		if (count >= 8) 
-		{
-			winText.text = "You Win!";
-		}
 	}
 }

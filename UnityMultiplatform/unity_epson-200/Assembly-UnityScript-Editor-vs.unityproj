@@ -92,6 +92,18 @@
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
+ <Reference Include="Ubicomp.Utils.NET.MulticastSocket">
+ <HintPath>C:/Users/bens/Desktop/UnityHandlers/UnityMultiplatform/unity_epson-200/Assets/Plugins/Ubicomp.Utils.NET.MulticastSocket.dll</HintPath>
+ </Reference>
+ <Reference Include="Jayrock.Json">
+ <HintPath>C:/Users/bens/Desktop/UnityHandlers/UnityMultiplatform/unity_epson-200/Assets/Plugins/Jayrock.Json.dll</HintPath>
+ </Reference>
+ <Reference Include="Ubicomp.Utils.NET.MulticastTransportFramework">
+ <HintPath>C:/Users/bens/Desktop/UnityHandlers/UnityMultiplatform/unity_epson-200/Assets/Plugins/Ubicomp.Utils.NET.MulticastTransportFramework.dll</HintPath>
+ </Reference>
+ <Reference Include="Vicon2Unity">
+ <HintPath>C:/Users/bens/Desktop/UnityHandlers/UnityMultiplatform/unity_epson-200/Assets/Plugins/Vicon2Unity.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-vs.csproj">

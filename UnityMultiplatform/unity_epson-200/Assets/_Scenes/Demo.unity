@@ -232,6 +232,7 @@ GameObject:
   - 114: {fileID: 404861811}
   - 114: {fileID: 404861810}
   - 114: {fileID: 404861820}
+  - 148: {fileID: 404861821}
   m_Layer: 0
   m_Name: EPSON Moverio BT-200
   m_TagString: MainCamera
@@ -247,13 +248,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 404861809}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4356c246f85dd4345903e23a73316d20, type: 3}
+  m_Script: {fileID: 11500000, guid: 48641fdd0046a37409adfdbd8b32fbe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bear: {fileID: 1094867241}
+  IPofViconServer: localhost
+  PortofViconServer: 801
+  TrackingObjectName: bt200
+  TrackingSegmentName: bt-200
   port: 5000
   TTL: 10
   groupIP: 225.4.5.6
-  subjectName: 
   position: {x: 0, y: 0, z: 0}
   quat: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &404861811
@@ -316,7 +321,7 @@ MonoBehaviour:
   maskCam: {fileID: 1959469451}
   guiCam: {fileID: 955256351}
   interaxial: 65
-  zeroPrlxDist: 5
+  zeroPrlxDist: 3
   toedIn: 0
   cameraSelect: 0
   H_I_T: 0
@@ -325,7 +330,7 @@ MonoBehaviour:
   planeNear: {fileID: 0}
   planeZero: {fileID: 0}
   planeFar: {fileID: 0}
-  horizontalFOV: 19.9084282
+  horizontalFOV: 19.9130116
   verticalFOV: 11.276
   useCustomStereoLayer: 0
   stereoLayer: 0
@@ -338,7 +343,7 @@ MonoBehaviour:
   stereoMaterial: {fileID: 0}
   format3D: 0
   anaglyphOptions: 1
-  sideBySideSqueezed: 1
+  sideBySideSqueezed: 0
   overUnderStretched: 0
   usePhoneMask: 1
   leftViewRect: {x: 0, y: 0, z: .5, w: 1}
@@ -431,8 +436,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06e3cf3e6e170404f9bd3108250ed369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IPofAndroid: 
+  IPofDesktop: 130.179.30.223
   ShowGUI: 1
+--- !u!148 &404861821
+NetworkView:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 404861809}
+  m_Enabled: 1
+  m_StateSynchronization: 2
+  m_Observed: {fileID: 404861819}
+  m_ViewID:
+    m_ID: 1
+    m_Type: 1
 --- !u!1001 &448113925
 Prefab:
   m_ObjectHideFlags: 0
@@ -471,6 +488,18 @@ Prefab:
     - target: {fileID: 400002, guid: e5171f72421770240bd7c3989fe351e3, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: e5171f72421770240bd7c3989fe351e3, type: 2}
+      propertyPath: m_LocalScale.x
+      value: .200000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: e5171f72421770240bd7c3989fe351e3, type: 2}
+      propertyPath: m_LocalScale.y
+      value: .200000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: e5171f72421770240bd7c3989fe351e3, type: 2}
+      propertyPath: m_LocalScale.z
+      value: .200000003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e5171f72421770240bd7c3989fe351e3, type: 2}
@@ -655,7 +684,7 @@ Transform:
   m_GameObject: {fileID: 1094867241}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -4.37113883e-08}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: .200000003, y: .200000003, z: .200000003}
   m_Children:
   - {fileID: 1688907944}
   - {fileID: 1396765264}
@@ -897,7 +926,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11440248, guid: bec4909d2f2dbfb43a78aed70389f5f7, type: 2}
       propertyPath: horizontalFOV
-      value: 49.7750244
+      value: 19.9130116
       objectReference: {fileID: 0}
     - target: {fileID: 440248, guid: bec4909d2f2dbfb43a78aed70389f5f7, type: 2}
       propertyPath: m_LocalPosition.x
@@ -906,6 +935,14 @@ Prefab:
     - target: {fileID: 440246, guid: bec4909d2f2dbfb43a78aed70389f5f7, type: 2}
       propertyPath: m_LocalPosition.x
       value: .0324999988
+      objectReference: {fileID: 0}
+    - target: {fileID: 11440248, guid: bec4909d2f2dbfb43a78aed70389f5f7, type: 2}
+      propertyPath: zeroPrlxDist
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11440248, guid: bec4909d2f2dbfb43a78aed70389f5f7, type: 2}
+      propertyPath: sideBySideSqueezed
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bec4909d2f2dbfb43a78aed70389f5f7, type: 2}

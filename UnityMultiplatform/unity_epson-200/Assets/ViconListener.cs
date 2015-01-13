@@ -16,6 +16,9 @@ public class ViconListener : MonoBehaviour, ITransportListener
   public string subjectName;
   public Vector3 position = new Vector3();
   public Quaternion quat = new Quaternion();
+
+  private bool messageReceived = false;
+
   // Use this for initialization
   void Start()
   {
@@ -42,12 +45,18 @@ public class ViconListener : MonoBehaviour, ITransportListener
     quat.y = -(float)msg.OrientationQuat[1]; 
     quat.z = (float)msg.OrientationQuat[2];
     quat.w = (float)msg.OrientationQuat[3];
+
+    messageReceived = true;
   }
 
   // Update is called once per frame
   void Update()
   {
+    if (!messageReceived)
+      return;
+
     transform.position = position;
     transform.rotation = quat;
+    messageReceived = false;
   }
 }

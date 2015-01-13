@@ -13,10 +13,10 @@
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
+    <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
     <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
-    <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
+    <UnityBuildTarget>Android:13</UnityBuildTarget>
     <UnityVersion>4.6.1p2</UnityVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -25,7 +25,7 @@
     <OutputPath>Temp\UnityVS_bin\Debug\</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>DEBUG;TRACE;UNITY_4_6_1;UNITY_4_6;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_4_6_1;UNITY_4_6;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE;CROSS_PLATFORM_INPUT;MOBILE_INPUT</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -33,7 +33,7 @@
     <OutputPath>Temp\UnityVS_bin\Release\</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>TRACE;UNITY_4_6_1;UNITY_4_6;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+    <DefineConstants>TRACE;UNITY_4_6_1;UNITY_4_6;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE;CROSS_PLATFORM_INPUT;MOBILE_INPUT</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
@@ -66,13 +66,68 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\MobileInput\Scripts\CrossPlatformInputManager.cs" />
+    <Compile Include="Assets\MobileInput\Scripts\Joystick.cs" />
+    <Compile Include="Assets\MobileInput\Scripts\MobileControlRig.cs" />
+    <Compile Include="Assets\MobileInput\Scripts\PlatformSpecific\MobileInput.cs" />
+    <Compile Include="Assets\MobileInput\Scripts\PlatformSpecific\StandaloneInput.cs" />
+    <Compile Include="Assets\MobileInput\Scripts\VirtualInput.cs" />
+    <Compile Include="Assets\MoverioBT200\Scripts\CircularList.cs" />
+    <Compile Include="Assets\MoverioBT200\Scripts\CommToAndroid.cs" />
+    <Compile Include="Assets\MoverioBT200\Scripts\CubeController.cs" />
+    <Compile Include="Assets\MoverioBT200\Scripts\GyroMouseController.cs" />
+    <Compile Include="Assets\MoverioBT200\Scripts\HandGestureController.cs" />
+    <Compile Include="Assets\MoverioBT200\Scripts\HeadController.cs" />
+    <Compile Include="Assets\MoverioBT200\Scripts\MoverioInputEventArgs.cs" />
+    <Compile Include="Assets\MoverioBT200\Scripts\MoverioInputProvider.cs" />
+    <Compile Include="Assets\MoverioBT200\Scripts\NetworkConnector.cs" />
+    <Compile Include="Assets\MoverioBT200\Scripts\RotationProvider.cs" />
+    <Compile Include="Assets\MoverioBT200\Scripts\SelectionControllerEventArgs.cs" />
+    <Compile Include="Assets\MoverioBT200\Scripts\SelectionEventArgs.cs" />
+    <Compile Include="Assets\MoverioBT200\Scripts\TouchMouseController.cs" />
+    <Compile Include="Assets\MoverioBT200\Scripts\WandController.cs" />
+    <Compile Include="Assets\PauseManager.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyAttack.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyMovement.cs" />
+    <Compile Include="Assets\Scripts\Managers\EnemyManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\GameOverManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\ScoreManager.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerHealth.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerShooting.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Rotator.cs" />
     <Compile Include="Assets\ViconListener.cs" />
+    <Compile Include="Assets\_CompletedAssets\Scripts\Camera\CameraFollow.cs" />
+    <Compile Include="Assets\_CompletedAssets\Scripts\Enemy\EnemyAttack.cs" />
+    <Compile Include="Assets\_CompletedAssets\Scripts\Enemy\EnemyHealth.cs" />
+    <Compile Include="Assets\_CompletedAssets\Scripts\Enemy\EnemyMovement.cs" />
+    <Compile Include="Assets\_CompletedAssets\Scripts\Helpers\BeautyShot.cs" />
+    <Compile Include="Assets\_CompletedAssets\Scripts\Helpers\RandomAnimationPoint.cs" />
+    <Compile Include="Assets\_CompletedAssets\Scripts\Helpers\RandomParticlePoint.cs" />
+    <Compile Include="Assets\_CompletedAssets\Scripts\Helpers\VolumeHandler.cs" />
+    <Compile Include="Assets\_CompletedAssets\Scripts\Managers\EnemyManager.cs" />
+    <Compile Include="Assets\_CompletedAssets\Scripts\Managers\GameOverManager.cs" />
+    <Compile Include="Assets\_CompletedAssets\Scripts\Managers\ScoreManager.cs" />
+    <Compile Include="Assets\_CompletedAssets\Scripts\Player\PlayerHealth.cs" />
+    <Compile Include="Assets\_CompletedAssets\Scripts\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\_CompletedAssets\Scripts\Player\PlayerShooting.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Fonts\LuckiestGuy\LICENSE.txt" />
+    <None Include="Assets\FOV2GO\Shaders\stereo3DViewMethods.shader" />
+    <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\res\menu\bt200_ctrl_unity.xml" />
+    <None Include="Assets\Plugins\Android\res\values\dimens.xml" />
+    <None Include="Assets\Plugins\Android\res\values\strings.xml" />
+    <None Include="Assets\Plugins\Android\res\values\styles.xml" />
+    <None Include="Assets\Plugins\Android\res\values-v11\styles.xml" />
+    <None Include="Assets\Plugins\Android\res\values-v14\styles.xml" />
+    <None Include="Assets\Plugins\Android\res\values-w820dp\dimens.xml" />
     <None Include="Assets\Resources\metaio\UnlitTexture.shader" />
+    <None Include="Assets\Shaders\Rim Lit Bumped Specular.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2010\UnityVS.CSharp.targets" />
 </Project>

@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_4_6_1;UNITY_4_6;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_6_1;UNITY_4_6;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE;CROSS_PLATFORM_INPUT;MOBILE_INPUT</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -46,23 +46,60 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\FOV2GO\Scripts\buttonBehaviors\triggerObjectButton.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\buttonBehaviors\triggerSceneChange.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\core\s3dAutoDepth.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\core\s3dCamera.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\core\s3dDepthInfo.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\core\s3dEnums.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\core\s3dGuiCursor.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\core\s3dGuiText.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\core\s3dGuiTexture.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\core\s3dGyroCam.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\core\s3dInteractor.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\core\s3dRotateHeading.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\core\s3dSmoothMouseLook.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\core\s3dStereoParameters.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\core\s3dTouchpad.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\core\s3dWindow.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\interactions\centerToCamera.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\interactions\fireGun.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\interactions\jumpInTheAir.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\interactions\pickUpPutDown.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\interactions\pivotObject.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\interactions\playSoundSimple.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\interactions\pointAtPoint.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\interactions\pushAway.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\interactions\rolloverText.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\interactions\rotateAndSpin.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\interactions\toggleLighting.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\interactions\toggleText.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\miscellaneous\aimObject.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\miscellaneous\attractAvoid.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\miscellaneous\playCollisionAudio.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\miscellaneous\screenPlane.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\miscellaneous\slowRotate.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\miscellaneous\spinObject.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\miscellaneous\triggerSoundByProximity.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\mobile\androidDeviceSelector.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\mobile\iosDeviceSelector.js" />
+     <Compile Include="Assets\FOV2GO\Scripts\mobile\s3dDeviceManager.js" />
      <Compile Include="Assets\Mxr_Unity_Package\Scripts\s3dCameraSBS.js" />
      <Compile Include="Assets\Mxr_Unity_Package\Scripts\s3dGyroCamSBS.js" />
+     <None Include="Assets\Plugins\Android\res\values\styles.xml" />
+     <None Include="Assets\FOV2GO\Shaders\stereo3DViewMethods.shader" />
+     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+     <None Include="Assets\Plugins\Android\res\values\dimens.xml" />
+     <None Include="Assets\Plugins\Android\res\values-v14\styles.xml" />
+     <None Include="Assets\Shaders\Rim Lit Bumped Specular.shader" />
+     <None Include="Assets\Plugins\Android\res\values-v11\styles.xml" />
+     <None Include="Assets\Fonts\LuckiestGuy\LICENSE.txt" />
+     <None Include="Assets\Plugins\Android\res\values-w820dp\dimens.xml" />
+     <None Include="Assets\Plugins\Android\res\menu\bt200_ctrl_unity.xml" />
+     <None Include="Assets\Plugins\Android\res\values\strings.xml" />
      <None Include="Assets\Resources\metaio\UnlitTexture.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
- </Reference>
- <Reference Include="Jayrock.Json">
- <HintPath>C:/Users/bens/Desktop/UnityHandlers/UnityMultiplatform/unity_epson-200/Assets/Plugins/Jayrock.Json.dll</HintPath>
- </Reference>
- <Reference Include="Ubicomp.Utils.NET.MulticastSocket">
- <HintPath>C:/Users/bens/Desktop/UnityHandlers/UnityMultiplatform/unity_epson-200/Assets/Plugins/Ubicomp.Utils.NET.MulticastSocket.dll</HintPath>
- </Reference>
- <Reference Include="Ubicomp.Utils.NET.MulticastTransportFramework">
- <HintPath>C:/Users/bens/Desktop/UnityHandlers/UnityMultiplatform/unity_epson-200/Assets/Plugins/Ubicomp.Utils.NET.MulticastTransportFramework.dll</HintPath>
- </Reference>
- <Reference Include="Vicon2Unity">
- <HintPath>C:/Users/bens/Desktop/UnityHandlers/UnityMultiplatform/unity_epson-200/Assets/Plugins/Vicon2Unity.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

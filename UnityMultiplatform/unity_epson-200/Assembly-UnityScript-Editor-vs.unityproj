@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_4_6_1;UNITY_4_6;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_6_1;UNITY_4_6;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE;CROSS_PLATFORM_INPUT;MOBILE_INPUT;ENABLE_DUCK_TYPING</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -46,8 +46,30 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\FOV2GO\Editor\s3dAutoDepthEditor.js" />
+     <Compile Include="Assets\FOV2GO\Editor\s3dCameraEditor.js" />
+     <Compile Include="Assets\FOV2GO\Editor\s3dDepthInfoEditor.js" />
+     <Compile Include="Assets\FOV2GO\Editor\s3dDeviceManagerEditor.js" />
+     <Compile Include="Assets\FOV2GO\Editor\s3dGuiCursorEditor.js" />
+     <Compile Include="Assets\FOV2GO\Editor\s3dGuiTextEditor.js" />
+     <Compile Include="Assets\FOV2GO\Editor\s3dGuiTextureEditor.js" />
+     <Compile Include="Assets\FOV2GO\Editor\s3dGyroCamEditor.js" />
+     <Compile Include="Assets\FOV2GO\Editor\s3dStereoParametersEditor.js" />
+     <Compile Include="Assets\FOV2GO\Editor\s3dTouchpadEditor.js" />
+     <Compile Include="Assets\FOV2GO\Editor\s3dWindowEditor.js" />
      <Compile Include="Assets\Mxr_Unity_Package\Editor\s3dCameraSBSEditor.js" />
      <Compile Include="Assets\Mxr_Unity_Package\Editor\s3dGyroCamSBSEditor.js" />
+     <None Include="Assets\Plugins\Android\res\values\styles.xml" />
+     <None Include="Assets\FOV2GO\Shaders\stereo3DViewMethods.shader" />
+     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+     <None Include="Assets\Plugins\Android\res\values\dimens.xml" />
+     <None Include="Assets\Plugins\Android\res\values-v14\styles.xml" />
+     <None Include="Assets\Shaders\Rim Lit Bumped Specular.shader" />
+     <None Include="Assets\Plugins\Android\res\values-v11\styles.xml" />
+     <None Include="Assets\Fonts\LuckiestGuy\LICENSE.txt" />
+     <None Include="Assets\Plugins\Android\res\values-w820dp\dimens.xml" />
+     <None Include="Assets\Plugins\Android\res\menu\bt200_ctrl_unity.xml" />
+     <None Include="Assets\Plugins\Android\res\values\strings.xml" />
      <None Include="Assets\Resources\metaio\UnlitTexture.shader" />
  <Reference Include="Assembly-UnityScript">
  <HintPath>C:/Users/bens/Desktop/UnityHandlers/UnityMultiplatform/unity_epson-200/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
@@ -57,18 +79,6 @@
  </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/Editor/UnityEditor.UI.dll</HintPath>
- </Reference>
- <Reference Include="Jayrock.Json">
- <HintPath>C:/Users/bens/Desktop/UnityHandlers/UnityMultiplatform/unity_epson-200/Assets/Plugins/Jayrock.Json.dll</HintPath>
- </Reference>
- <Reference Include="Ubicomp.Utils.NET.MulticastSocket">
- <HintPath>C:/Users/bens/Desktop/UnityHandlers/UnityMultiplatform/unity_epson-200/Assets/Plugins/Ubicomp.Utils.NET.MulticastSocket.dll</HintPath>
- </Reference>
- <Reference Include="Ubicomp.Utils.NET.MulticastTransportFramework">
- <HintPath>C:/Users/bens/Desktop/UnityHandlers/UnityMultiplatform/unity_epson-200/Assets/Plugins/Ubicomp.Utils.NET.MulticastTransportFramework.dll</HintPath>
- </Reference>
- <Reference Include="Vicon2Unity">
- <HintPath>C:/Users/bens/Desktop/UnityHandlers/UnityMultiplatform/unity_epson-200/Assets/Plugins/Vicon2Unity.dll</HintPath>
  </Reference>
  <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
  <HintPath>C:/Users/bens/Desktop/UnityHandlers/UnityMultiplatform/unity_epson-200/Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
@@ -81,6 +91,18 @@
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+ </Reference>
+ <Reference Include="Ubicomp.Utils.NET.MulticastSocket">
+ <HintPath>C:/Users/bens/Desktop/UnityHandlers/UnityMultiplatform/unity_epson-200/Assets/Plugins/Ubicomp.Utils.NET.MulticastSocket.dll</HintPath>
+ </Reference>
+ <Reference Include="Jayrock.Json">
+ <HintPath>C:/Users/bens/Desktop/UnityHandlers/UnityMultiplatform/unity_epson-200/Assets/Plugins/Jayrock.Json.dll</HintPath>
+ </Reference>
+ <Reference Include="Ubicomp.Utils.NET.MulticastTransportFramework">
+ <HintPath>C:/Users/bens/Desktop/UnityHandlers/UnityMultiplatform/unity_epson-200/Assets/Plugins/Ubicomp.Utils.NET.MulticastTransportFramework.dll</HintPath>
+ </Reference>
+ <Reference Include="Vicon2Unity">
+ <HintPath>C:/Users/bens/Desktop/UnityHandlers/UnityMultiplatform/unity_epson-200/Assets/Plugins/Vicon2Unity.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

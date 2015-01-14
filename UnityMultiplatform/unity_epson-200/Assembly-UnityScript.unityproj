@@ -101,11 +101,11 @@
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
- <Reference Include="Ubicomp.Utils.NET.MulticastSocket">
- <HintPath>C:/Users/bens/Desktop/UnityHandlers/UnityMultiplatform/unity_epson-200/Assets/Plugins/Ubicomp.Utils.NET.MulticastSocket.dll</HintPath>
- </Reference>
  <Reference Include="Jayrock.Json">
  <HintPath>C:/Users/bens/Desktop/UnityHandlers/UnityMultiplatform/unity_epson-200/Assets/Plugins/Jayrock.Json.dll</HintPath>
+ </Reference>
+ <Reference Include="Ubicomp.Utils.NET.MulticastSocket">
+ <HintPath>C:/Users/bens/Desktop/UnityHandlers/UnityMultiplatform/unity_epson-200/Assets/Plugins/Ubicomp.Utils.NET.MulticastSocket.dll</HintPath>
  </Reference>
  <Reference Include="Ubicomp.Utils.NET.MulticastTransportFramework">
  <HintPath>C:/Users/bens/Desktop/UnityHandlers/UnityMultiplatform/unity_epson-200/Assets/Plugins/Ubicomp.Utils.NET.MulticastTransportFramework.dll</HintPath>

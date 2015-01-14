@@ -122,7 +122,7 @@ namespace Vicon2UnityServer
       if (Result.Success ==_Output_GetSegmentGlobalTranslation.Result
           && Result.Success == _Output_GetSegmentGlobalRotationQuaternion.Result)
       {
-        Console.WriteLine("{0},{1},{2}", _Output_GetSegmentGlobalTranslation.Translation[0] / 1000, _Output_GetSegmentGlobalTranslation.Translation[1] / 1000, _Output_GetSegmentGlobalTranslation.Translation[2] / 1000);
+        Console.WriteLine("{0},{1},{2}", _Output_GetSegmentGlobalTranslation.Translation[0], _Output_GetSegmentGlobalTranslation.Translation[1], _Output_GetSegmentGlobalTranslation.Translation[2]);
         return new ViconMessage() 
         { 
           SubjectName = subjectName,

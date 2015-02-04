@@ -2,11 +2,14 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Vicon2UnityServer.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="TrackingObjectName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">bt200</Value>
+    <Setting Name="CameraName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">BT-200</Value>
     </Setting>
-    <Setting Name="TrackingSegmentName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">bt-200</Value>
+    <Setting Name="FingerThumbName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">fingerThumb</Value>
+    </Setting>
+    <Setting Name="FingerIndexName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">fingerIndex</Value>
     </Setting>
   </Settings>
 </SettingsFile>

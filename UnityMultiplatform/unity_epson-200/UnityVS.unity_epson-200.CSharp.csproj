@@ -99,7 +99,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerShooting.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Rotator.cs" />
-    <Compile Include="Assets\Scripts\Vicon\WindowsViconConnector.cs" />
+    <Compile Include="Assets\ViconConnector\Scripts\WindowsViconConnector.cs" />
     <Compile Include="Assets\_CompletedAssets\Scripts\Camera\CameraFollow.cs" />
     <Compile Include="Assets\_CompletedAssets\Scripts\Enemy\EnemyAttack.cs" />
     <Compile Include="Assets\_CompletedAssets\Scripts\Enemy\EnemyHealth.cs" />

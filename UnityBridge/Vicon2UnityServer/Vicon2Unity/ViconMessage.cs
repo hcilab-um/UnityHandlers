@@ -7,16 +7,23 @@ using Ubicomp.Utils.NET.MulticastTransportFramework;
 namespace Vicon2Unity
 {
 
-  public class ViconMessage : ITransportMessageContent
+  public class ViconObject
   {
     public double[] Position;
     public double[] OrientationQuat;
     public bool Occluded;
     public string SubjectName;
 
-    public ViconMessage() 
-    {
-    }
+    public ViconObject() { }
+  }
+
+  public class ViconMessage : ITransportMessageContent
+  {
+    public ViconObject Camera;
+    public ViconObject FingerIndex;
+    public ViconObject FingerThumb;
+
+    public ViconMessage() { }
   }
 
 }

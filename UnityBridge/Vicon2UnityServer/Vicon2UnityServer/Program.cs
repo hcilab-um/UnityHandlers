@@ -58,7 +58,7 @@ namespace Vicon2UnityServer
       Console.WriteLine();
       while (!Console.KeyAvailable)
       {
-        ViconMessage message = LoadViconMessage(Settings.Default.TrackingObjectName, Settings.Default.TrackingSegmentName);
+        ViconMessage message = LoadViconMessage(Settings.Default.CameraName, Settings.Default.FingerThumbName, Settings.Default.FingerIndexName);
         if (message != null)
         {
           testObj.SendMessages(message);
@@ -70,9 +70,9 @@ namespace Vicon2UnityServer
 
     private void ConnectToVicon()
     {
-      Socket viconSocket = new Socket(AddressFamily.InterNetwork,
-              SocketType.Dgram, ProtocolType.Udp);
+      Socket viconSocket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
       string HostName = "localhost:801";
+
       // Make a new client
       MyClient = new ViconDataStreamSDK.DotNET.Client();
       while (!MyClient.IsConnected().Connected)
@@ -82,28 +82,19 @@ namespace Vicon2UnityServer
         System.Threading.Thread.Sleep(200);
         Console.Write(".");
       }
+
       Console.WriteLine();
       MyClient.EnableSegmentData();
       //ServerPush have no latency
       MyClient.SetStreamMode(ViconDataStreamSDK.DotNET.StreamMode.ServerPush);
 
-
       // Set the global up axis
-      //MyClient.SetAxisMapping(ViconDataStreamSDK.DotNET.Direction.Forward,
-      //                         ViconDataStreamSDK.DotNET.Direction.Left,
-      //                         ViconDataStreamSDK.DotNET.Direction.Up); // Z-up
-
-      MyClient.SetAxisMapping(ViconDataStreamSDK.DotNET.Direction.Forward,
-                               ViconDataStreamSDK.DotNET.Direction.Up,
-                               ViconDataStreamSDK.DotNET.Direction.Right); // Y-up
-
-      //MyClient.StartTransmittingMulticast("localhost", "224.0.0.0");
+      MyClient.SetAxisMapping(ViconDataStreamSDK.DotNET.Direction.Forward, ViconDataStreamSDK.DotNET.Direction.Up, ViconDataStreamSDK.DotNET.Direction.Right); // Y-up
     }
 
-    private static ViconMessage LoadViconMessage(string subjectName, string segmentName)
+    private static ViconMessage LoadViconMessage(string cameraName, string fingerIndexName = null, string fingerThumbName = null)
     {
       // Get a frame
-      Console.Write("Waiting for new frame...");
       ViconDataStreamSDK.DotNET.Result a = MyClient.GetFrame().Result;
       while (MyClient.GetFrame().Result != ViconDataStreamSDK.DotNET.Result.Success)
       {
@@ -113,27 +104,38 @@ namespace Vicon2UnityServer
       Console.WriteLine();
 
       // Get the global segment translation
-      Output_GetSegmentGlobalTranslation _Output_GetSegmentGlobalTranslation =
-        MyClient.GetSegmentGlobalTranslation(subjectName, segmentName);
-      // Get the global segment rotation in quaternion co-ordinates
-      Output_GetSegmentGlobalRotationQuaternion _Output_GetSegmentGlobalRotationQuaternion =
-        MyClient.GetSegmentGlobalRotationQuaternion(subjectName, segmentName);
+      ViconObject camera = GetViconObjectFromFrame(cameraName);
+      ViconObject fingerIndex = fingerIndexName != null ? GetViconObjectFromFrame(fingerIndexName) : null;
+      ViconObject fingerThumb = fingerThumbName != null ? GetViconObjectFromFrame(fingerThumbName) : null;
 
-      if (Result.Success ==_Output_GetSegmentGlobalTranslation.Result
+      ViconMessage message = new ViconMessage();
+      message.Camera = camera;
+      message.FingerIndex = fingerIndex;
+      message.FingerThumb = fingerThumb;
+
+      if (message.Camera != null)
+        return message;
+      return null;
+    }
+
+    private static ViconObject GetViconObjectFromFrame(string objectName)
+    {
+      Output_GetSegmentGlobalTranslation _Output_GetSegmentGlobalTranslation = MyClient.GetSegmentGlobalTranslation(objectName, objectName);
+      Output_GetSegmentGlobalRotationQuaternion _Output_GetSegmentGlobalRotationQuaternion = MyClient.GetSegmentGlobalRotationQuaternion(objectName, objectName);
+
+      if (Result.Success == _Output_GetSegmentGlobalTranslation.Result
           && Result.Success == _Output_GetSegmentGlobalRotationQuaternion.Result)
       {
-        Console.WriteLine("{0},{1},{2}", _Output_GetSegmentGlobalTranslation.Translation[0] / 1000, _Output_GetSegmentGlobalTranslation.Translation[1] / 1000, _Output_GetSegmentGlobalTranslation.Translation[2] / 1000);
-        return new ViconMessage() 
-        { 
-          SubjectName = subjectName,
-          Occluded = _Output_GetSegmentGlobalTranslation.Occluded, 
-          Position = _Output_GetSegmentGlobalTranslation.Translation, 
-          OrientationQuat = _Output_GetSegmentGlobalRotationQuaternion.Rotation };
+        Console.WriteLine("{0},{1},{2}", _Output_GetSegmentGlobalTranslation.Translation[0], _Output_GetSegmentGlobalTranslation.Translation[1], _Output_GetSegmentGlobalTranslation.Translation[2]);
+        return new ViconObject()
+        {
+          SubjectName = objectName,
+          Occluded = _Output_GetSegmentGlobalTranslation.Occluded,
+          Position = _Output_GetSegmentGlobalTranslation.Translation,
+          OrientationQuat = _Output_GetSegmentGlobalRotationQuaternion.Rotation
+        };
       }
 
-      Console.WriteLine("Fail To get Vicon message: {0} - {1}", 
-                         _Output_GetSegmentGlobalTranslation.Result.ToString(), 
-                         _Output_GetSegmentGlobalRotationQuaternion.Result.ToString());
       return null;
     }
   }

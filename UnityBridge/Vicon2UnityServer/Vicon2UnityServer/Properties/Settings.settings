@@ -6,19 +6,19 @@
       <Value Profile="(Default)">BT-200</Value>
     </Setting>
     <Setting Name="FingerThumbName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">fingerThumb</Value>
+      <Value Profile="(Default)">ThumbFinger</Value>
     </Setting>
     <Setting Name="FingerIndexName" Type="System.String" Scope="User">
       <Value Profile="(Default)">IndexFinger</Value>
-    </Setting>
-    <Setting Name="WandName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">MoverioWand</Value>
     </Setting>
     <Setting Name="ViconServerIP" Type="System.String" Scope="User">
       <Value Profile="(Default)">localhost</Value>
     </Setting>
     <Setting Name="ViconServerPort" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">801</Value>
+    </Setting>
+    <Setting Name="RayName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">MoverioWand</Value>
     </Setting>
   </Settings>
 </SettingsFile>

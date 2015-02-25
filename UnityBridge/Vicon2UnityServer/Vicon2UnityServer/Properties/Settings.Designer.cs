@@ -37,7 +37,7 @@ namespace Vicon2UnityServer.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("fingerThumb")]
+        [global::System.Configuration.DefaultSettingValueAttribute("ThumbFinger")]
         public string FingerThumbName {
             get {
                 return ((string)(this["FingerThumbName"]));
@@ -56,18 +56,6 @@ namespace Vicon2UnityServer.Properties {
             }
             set {
                 this["FingerIndexName"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("MoverioWand")]
-        public string WandName {
-            get {
-                return ((string)(this["WandName"]));
-            }
-            set {
-                this["WandName"] = value;
             }
         }
         
@@ -92,6 +80,18 @@ namespace Vicon2UnityServer.Properties {
             }
             set {
                 this["ViconServerPort"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("MoverioWand")]
+        public string RayName {
+            get {
+                return ((string)(this["RayName"]));
+            }
+            set {
+                this["RayName"] = value;
             }
         }
     }

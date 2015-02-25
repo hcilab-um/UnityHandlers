@@ -58,7 +58,7 @@ namespace Vicon2UnityServer
       Console.WriteLine();
       while (!Console.KeyAvailable)
       {
-        ViconMessage message = LoadViconMessage(Settings.Default.CameraName, Settings.Default.FingerThumbName, Settings.Default.FingerIndexName);
+        ViconMessage message = LoadViconMessage(Settings.Default.CameraName, Settings.Default.FingerThumbName, Settings.Default.FingerIndexName, Settings.Default.RayName);
         if (message != null)
         {
           testObj.SendMessages(message);
@@ -92,7 +92,7 @@ namespace Vicon2UnityServer
       MyClient.SetAxisMapping(ViconDataStreamSDK.DotNET.Direction.Forward, ViconDataStreamSDK.DotNET.Direction.Up, ViconDataStreamSDK.DotNET.Direction.Right); // Y-up
     }
 
-    private static ViconMessage LoadViconMessage(string cameraName, string fingerIndexName = null, string fingerThumbName = null)
+    private static ViconMessage LoadViconMessage(string cameraName, string fingerIndexName, string fingerThumbName, string rayName)
     {
       // Get a frame
       ViconDataStreamSDK.DotNET.Result a = MyClient.GetFrame().Result;
@@ -107,6 +107,7 @@ namespace Vicon2UnityServer
       ViconObject camera = GetViconObjectFromFrame(cameraName);
       ViconObject fingerIndex = fingerIndexName != null ? GetViconObjectFromFrame(fingerIndexName) : null;
       ViconObject fingerThumb = fingerThumbName != null ? GetViconObjectFromFrame(fingerThumbName) : null;
+      ViconObject ray = rayName != null ? GetViconObjectFromFrame(rayName) : null;
 
       ViconMessage message = new ViconMessage();
       message.Camera = camera;

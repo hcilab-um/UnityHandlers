@@ -22,6 +22,7 @@ namespace Vicon2Unity
     public ViconObject Camera;
     public ViconObject FingerIndex;
     public ViconObject FingerThumb;
+    public ViconObject Ray;
 
     public ViconMessage() { }
   }

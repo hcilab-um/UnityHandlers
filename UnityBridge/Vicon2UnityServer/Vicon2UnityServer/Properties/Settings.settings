@@ -11,5 +11,8 @@
     <Setting Name="FingerIndexName" Type="System.String" Scope="User">
       <Value Profile="(Default)">fingerIndex</Value>
     </Setting>
+    <Setting Name="RayName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">raycaster</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

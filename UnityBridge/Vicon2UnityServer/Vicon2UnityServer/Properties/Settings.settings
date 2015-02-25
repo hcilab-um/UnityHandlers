@@ -9,7 +9,16 @@
       <Value Profile="(Default)">fingerThumb</Value>
     </Setting>
     <Setting Name="FingerIndexName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">fingerIndex</Value>
+      <Value Profile="(Default)">IndexFinger</Value>
+    </Setting>
+    <Setting Name="WandName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">MoverioWand</Value>
+    </Setting>
+    <Setting Name="ViconServerIP" Type="System.String" Scope="User">
+      <Value Profile="(Default)">localhost</Value>
+    </Setting>
+    <Setting Name="ViconServerPort" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">801</Value>
     </Setting>
   </Settings>
 </SettingsFile>

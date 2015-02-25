@@ -53,7 +53,7 @@ namespace Vicon2UnityServer
     {
       Program testObj = new Program("225.4.5.6", 5000, 10);
       testObj.Config();
-      testObj.ConnectToVicon();
+      testObj.ConnectToVicon(Settings.Default.ViconServerIP, Settings.Default.ViconServerPort);
       Console.Write("Waiting for new frame...");
       Console.WriteLine();
       while (!Console.KeyAvailable)
@@ -68,10 +68,10 @@ namespace Vicon2UnityServer
       Console.Read();
     }
 
-    private void ConnectToVicon()
+    private void ConnectToVicon(String ipOfViconServer, int port)
     {
       Socket viconSocket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
-      string HostName = "localhost:801";
+      string HostName = ipOfViconServer + ":" + port;
 
       // Make a new client
       MyClient = new ViconDataStreamSDK.DotNET.Client();

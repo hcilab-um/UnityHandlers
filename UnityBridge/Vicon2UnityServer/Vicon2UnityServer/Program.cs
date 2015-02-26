@@ -113,6 +113,7 @@ namespace Vicon2UnityServer
       message.Camera = camera;
       message.FingerIndex = fingerIndex;
       message.FingerThumb = fingerThumb;
+      message.Ray = ray;
 
       if (message.Camera != null)
         return message;
@@ -127,7 +128,7 @@ namespace Vicon2UnityServer
       if (Result.Success == _Output_GetSegmentGlobalTranslation.Result
           && Result.Success == _Output_GetSegmentGlobalRotationQuaternion.Result)
       {
-        Console.WriteLine("{0},{1},{2}", _Output_GetSegmentGlobalTranslation.Translation[0], _Output_GetSegmentGlobalTranslation.Translation[1], _Output_GetSegmentGlobalTranslation.Translation[2]);
+        Console.WriteLine("{0}: {1},{2},{3}", objectName, _Output_GetSegmentGlobalTranslation.Translation[0], _Output_GetSegmentGlobalTranslation.Translation[1], _Output_GetSegmentGlobalTranslation.Translation[2]);
         return new ViconObject()
         {
           SubjectName = objectName,

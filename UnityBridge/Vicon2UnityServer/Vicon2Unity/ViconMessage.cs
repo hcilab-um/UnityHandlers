@@ -14,7 +14,24 @@ namespace Vicon2Unity
     public bool Occluded;
     public string SubjectName;
 
-    public ViconObject() { }
+    public ViconObject() 
+    { 
+      Position = new double[3];
+      OrientationQuat = new double[4];
+      Occluded = false;
+      SubjectName = String.Empty;
+    }
+
+    private static ViconObject empty;
+    public static ViconObject Empty 
+    { 
+      get 
+      {
+        if (empty == null)
+          empty = new ViconObject();
+        return empty;
+      } 
+    }
   }
 
   public class ViconMessage : ITransportMessageContent

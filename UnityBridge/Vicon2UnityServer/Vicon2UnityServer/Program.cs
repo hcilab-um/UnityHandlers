@@ -58,7 +58,7 @@ namespace Vicon2UnityServer
       Console.WriteLine();
       while (!Console.KeyAvailable)
       {
-        ViconMessage message = LoadViconMessage(Settings.Default.CameraName, Settings.Default.FingerThumbName, Settings.Default.FingerIndexName, Settings.Default.RayName);
+        ViconMessage message = LoadViconMessage(Settings.Default.CameraName, Settings.Default.FingerIndexName, Settings.Default.FingerThumbName, Settings.Default.RayName);
         if (message != null)
         {
           testObj.SendMessages(message);
@@ -105,9 +105,9 @@ namespace Vicon2UnityServer
 
       // Get the global segment translation
       ViconObject camera = GetViconObjectFromFrame(cameraName);
-      ViconObject fingerIndex = fingerIndexName != null ? GetViconObjectFromFrame(fingerIndexName) : null;
-      ViconObject fingerThumb = fingerThumbName != null ? GetViconObjectFromFrame(fingerThumbName) : null;
-      ViconObject ray = rayName != null ? GetViconObjectFromFrame(rayName) : null;
+      ViconObject fingerIndex = fingerIndexName != null ? GetViconObjectFromFrame(fingerIndexName) : ViconObject.Empty;
+      ViconObject fingerThumb = fingerThumbName != null ? GetViconObjectFromFrame(fingerThumbName) : ViconObject.Empty;
+      ViconObject ray = rayName != null ? GetViconObjectFromFrame(rayName) : ViconObject.Empty;
 
       ViconMessage message = new ViconMessage();
       message.Camera = camera;
@@ -138,7 +138,8 @@ namespace Vicon2UnityServer
         };
       }
 
-      return null;
+      Console.WriteLine("{0}: Not Defined in Tracker", objectName);
+      return ViconObject.Empty;
     }
   }
 }

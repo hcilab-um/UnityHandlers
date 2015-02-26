@@ -128,14 +128,23 @@ namespace Vicon2UnityServer
       if (Result.Success == _Output_GetSegmentGlobalTranslation.Result
           && Result.Success == _Output_GetSegmentGlobalRotationQuaternion.Result)
       {
-        Console.WriteLine("{0}: {1},{2},{3}", objectName, _Output_GetSegmentGlobalTranslation.Translation[0], _Output_GetSegmentGlobalTranslation.Translation[1], _Output_GetSegmentGlobalTranslation.Translation[2]);
-        return new ViconObject()
+        ViconObject returnV = new ViconObject()
         {
           SubjectName = objectName,
           Occluded = _Output_GetSegmentGlobalTranslation.Occluded,
-          Position = _Output_GetSegmentGlobalTranslation.Translation,
-          OrientationQuat = _Output_GetSegmentGlobalRotationQuaternion.Rotation
         };
+
+        returnV.Position[0] = _Output_GetSegmentGlobalTranslation.Translation[0];
+        returnV.Position[1] = _Output_GetSegmentGlobalTranslation.Translation[1];
+        returnV.Position[2] = _Output_GetSegmentGlobalTranslation.Translation[2];
+
+        returnV.OrientationQuat[0] = _Output_GetSegmentGlobalRotationQuaternion.Rotation[0];
+        returnV.OrientationQuat[1] = _Output_GetSegmentGlobalRotationQuaternion.Rotation[1];
+        returnV.OrientationQuat[2] = _Output_GetSegmentGlobalRotationQuaternion.Rotation[2];
+        returnV.OrientationQuat[3] = _Output_GetSegmentGlobalRotationQuaternion.Rotation[3];
+
+        Console.WriteLine("{0}: {1},{2},{3}", objectName, returnV.Position[0], returnV.Position[1], returnV.Position[2]);
+        return returnV;
       }
 
       Console.WriteLine("{0}: Not Defined in Tracker", objectName);

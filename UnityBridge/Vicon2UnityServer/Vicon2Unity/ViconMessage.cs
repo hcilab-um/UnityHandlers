@@ -10,14 +10,14 @@ namespace Vicon2Unity
   public class ViconObject
   {
     public double[] Position;
-    public double[] OrientationQuat;
+    public double[] RotationQuat;
     public bool Occluded;
     public string SubjectName;
 
     public ViconObject() 
     { 
       Position = new double[3];
-      OrientationQuat = new double[4];
+      RotationQuat = new double[4];
       Occluded = false;
       SubjectName = String.Empty;
     }
@@ -36,7 +36,8 @@ namespace Vicon2Unity
 
   public class ViconMessage : ITransportMessageContent
   {
-    public ViconObject Camera;
+    public ViconObject Camera1;
+    public ViconObject Camera2;
     public ViconObject FingerIndex;
     public ViconObject FingerThumb;
     public ViconObject Ray;

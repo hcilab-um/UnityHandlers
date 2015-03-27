@@ -58,7 +58,7 @@ namespace Vicon2UnityServer
       Console.WriteLine();
       while (!Console.KeyAvailable)
       {
-        ViconMessage message = LoadViconMessage(Settings.Default.CameraName, Settings.Default.FingerIndexName, Settings.Default.FingerThumbName, Settings.Default.RayName);
+        ViconMessage message = LoadViconMessage(Settings.Default.Camera1Name, Settings.Default.Camera2Name, Settings.Default.FingerIndexName, Settings.Default.FingerThumbName, Settings.Default.RayName);
         if (message != null)
         {
           testObj.SendMessages(message);
@@ -92,7 +92,7 @@ namespace Vicon2UnityServer
       MyClient.SetAxisMapping(ViconDataStreamSDK.DotNET.Direction.Forward, ViconDataStreamSDK.DotNET.Direction.Up, ViconDataStreamSDK.DotNET.Direction.Right); // Y-up
     }
 
-    private static ViconMessage LoadViconMessage(string cameraName, string fingerIndexName, string fingerThumbName, string rayName)
+    private static ViconMessage LoadViconMessage(string camera1Name, string camera2Name, string fingerIndexName, string fingerThumbName, string rayName)
     {
       // Get a frame
       ViconDataStreamSDK.DotNET.Result a = MyClient.GetFrame().Result;
@@ -104,18 +104,20 @@ namespace Vicon2UnityServer
       Console.WriteLine();
 
       // Get the global segment translation
-      ViconObject camera = GetViconObjectFromFrame(cameraName);
+      ViconObject camera1 = GetViconObjectFromFrame(camera1Name);
+      ViconObject camera2 = GetViconObjectFromFrame(camera2Name);
       ViconObject fingerIndex = fingerIndexName != null ? GetViconObjectFromFrame(fingerIndexName) : ViconObject.Empty;
       ViconObject fingerThumb = fingerThumbName != null ? GetViconObjectFromFrame(fingerThumbName) : ViconObject.Empty;
       ViconObject ray = rayName != null ? GetViconObjectFromFrame(rayName) : ViconObject.Empty;
 
       ViconMessage message = new ViconMessage();
-      message.Camera = camera;
+      message.Camera1 = camera1;
+      message.Camera2 = camera2;
       message.FingerIndex = fingerIndex;
       message.FingerThumb = fingerThumb;
       message.Ray = ray;
 
-      if (message.Camera != null)
+      if (message.Camera1 != null)
         return message;
       return null;
     }
@@ -138,10 +140,10 @@ namespace Vicon2UnityServer
         returnV.Position[1] = _Output_GetSegmentGlobalTranslation.Translation[1];
         returnV.Position[2] = _Output_GetSegmentGlobalTranslation.Translation[2];
 
-        returnV.OrientationQuat[0] = _Output_GetSegmentGlobalRotationQuaternion.Rotation[0];
-        returnV.OrientationQuat[1] = _Output_GetSegmentGlobalRotationQuaternion.Rotation[1];
-        returnV.OrientationQuat[2] = _Output_GetSegmentGlobalRotationQuaternion.Rotation[2];
-        returnV.OrientationQuat[3] = _Output_GetSegmentGlobalRotationQuaternion.Rotation[3];
+        returnV.RotationQuat[0] = _Output_GetSegmentGlobalRotationQuaternion.Rotation[0];
+        returnV.RotationQuat[1] = _Output_GetSegmentGlobalRotationQuaternion.Rotation[1];
+        returnV.RotationQuat[2] = _Output_GetSegmentGlobalRotationQuaternion.Rotation[2];
+        returnV.RotationQuat[3] = _Output_GetSegmentGlobalRotationQuaternion.Rotation[3];
 
         Console.WriteLine("{0}: {1},{2},{3}", objectName, returnV.Position[0], returnV.Position[1], returnV.Position[2]);
         return returnV;

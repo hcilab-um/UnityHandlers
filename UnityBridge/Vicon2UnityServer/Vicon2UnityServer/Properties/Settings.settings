@@ -2,8 +2,8 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Vicon2UnityServer.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="CameraName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">BT-200</Value>
+    <Setting Name="Camera1Name" Type="System.String" Scope="User">
+      <Value Profile="(Default)">BT-200-1</Value>
     </Setting>
     <Setting Name="FingerThumbName" Type="System.String" Scope="User">
       <Value Profile="(Default)">ThumbFinger</Value>
@@ -19,6 +19,9 @@
     </Setting>
     <Setting Name="RayName" Type="System.String" Scope="User">
       <Value Profile="(Default)">MoverioWand</Value>
+    </Setting>
+    <Setting Name="Camera2Name" Type="System.String" Scope="User">
+      <Value Profile="(Default)">BT-200-2</Value>
     </Setting>
   </Settings>
 </SettingsFile>
